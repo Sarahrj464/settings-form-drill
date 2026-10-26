@@ -1,6 +1,7 @@
 # WORKFLOW.md
 
 ## Round 1: Vague Prompt
+
 **Prompt:** "Make a settings form with validation."
 **Tool:** GitHub Copilot (Agent mode)
 
@@ -18,22 +19,25 @@
 - **Tests:** none.
 
 ## Round 2: Precise Prompt
+
 **Prompt:** Specified the file path (`SettingsForm.jsx`), constraints
 (React + plain CSS, no sidebar), exact validation rules, example
 behavior, and a verification step (write and run Vitest tests).
 **Tool:** GitHub Copilot (Agent mode)
 
-- **Correctness:** 8/8 Vitest tests passed. [Submit showed
-  "Settings saved." yes/no.]
+- **Correctness:** 8/8 Vitest tests passed. Submit showed
+  "Settings saved."
 - **Accessibility:** `aria-invalid`, `aria-describedby` and
   `aria-live="polite"` are asserted in the tests.
 - **Edge cases:** A whitespace-only name fails validation, and the
   tests cover it.
-- **Review effort:** about [X] minutes.
-- **AI mistake I caught:** [only if you really found one, e.g.
-  the tests check the `near-limit` class, not the actual red color.]
+- **Review effort:** about 8 minutes (reading the tests and
+  testing manually).
+- **AI mistake I caught:** None found in Round 2. One limitation:
+  the tests check CSS class names, not the real rendered color.
 
 ## Comparison (git diff round-1-vague round-2-precise --stat)
+
 - Round 2 added `SettingsForm.jsx` (+201) and
   `SettingsForm.test.jsx` (+126); Round 1 had no tests.
 - `App.jsx` shrank by about 270 lines, because the unrequested
@@ -43,5 +47,6 @@ behavior, and a verification step (write and run Vitest tests).
   caught them automatically.
 
 ## Lessons
+
 Specific constraints removed AI guesswork. Verification steps
 produced proof instead of trust.
