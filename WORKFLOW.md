@@ -45,6 +45,8 @@ behavior, and a verification step (write and run Vitest tests).
 - `package.json` changed (+9) to add Vitest.
 - Round 1 had to be reviewed for bugs by hand; Round 2's tests
   caught them automatically.
+- Round 2's manual test confirmed that "Settings saved." appears on
+  valid submit, while Round 1's Save button did nothing at all.
 
 ## Lessons
 
